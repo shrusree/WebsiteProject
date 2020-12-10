@@ -1,1 +1,1 @@
-web: python .Rental.wsgi
+web: python Rental.wsgi
