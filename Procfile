@@ -1,1 +1,1 @@
-web: gunicorn Rental.wsgi
+web: python .rental.wsgi
