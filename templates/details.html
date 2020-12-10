@@ -1,0 +1,15 @@
+{% extends 'index.html'%} 
+
+{% block title %}Details{% endblock title %}
+
+{% block body %}
+{% for clot in cloth %}
+    {% if clot.picture %}
+         <img src="{{ clot.picture.url }}"></img>
+    {% endif %}
+    <h2>{{ clot.title }}</h2>
+    <p>{{ clot.description }}</p> 
+{% endfor %}
+{% endblock body %}
+
+ {% comment %} style="text-align:center" {% endcomment %}
