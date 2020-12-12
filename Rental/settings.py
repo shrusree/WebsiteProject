@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["attirent.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    "crispy_forms",
     "posts.apps.PostsConfig",
     "register.apps.RegisterConfig",
     "django.contrib.admin",
