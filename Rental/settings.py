@@ -25,7 +25,7 @@ SECRET_KEY = "s27)c4%2fx&89eg8t8!isjvb=v6!5eu-f$2xpvnxqpi(d%4gqv"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["attirent.herokuapp.com"]
 
 
 # Application definition
