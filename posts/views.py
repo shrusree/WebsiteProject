@@ -48,7 +48,7 @@ def delete_cloth(request, pk):
 
 
 def upload(request):
-    # context = {}
+    context = {}
     form = ClothesForm()
     if request.method == "POST":
         uploaded_file = request.FILES["document"]
