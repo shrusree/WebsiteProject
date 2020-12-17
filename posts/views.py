@@ -30,23 +30,36 @@ def user(request):
     return render(request, "user.html")
 
 
+def lists(request):
+    cloth = Clothes.objects.all()
+    return render(request, "lists.html", {"cloth": cloth})
+
+
 def details(request):
     cloth = Clothes.objects.all()
     return render(request, "details.html", {"cloth": cloth})
+
+
+def delete_cloth(request, pk):
+    if request.method == "POST":
+        cloth = Clothes.objects.get(pk=pk)
+        cloth.delete()
+    return render(request, "lists.html", {"cloth": cloth})
 
 
 def upload(request):
     # context = {}
     form = ClothesForm()
     if request.method == "POST":
-        # uploaded_file = request.FILES["document"]
-        # fs = FileSystemStorage()
-        # name = fs.save(uploaded_file.name, uploaded_file)
-        # context["url"] = fs.url(name)
-        form = ClothesForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect("/")
-    else:
-        form = ClothesForm()
-    return render(request, "upload.html", {"form": form})
+        uploaded_file = request.FILES["document"]
+        fs = FileSystemStorage()
+        # name =
+        fs.save(uploaded_file.name, uploaded_file)
+    #     context["url"] = fs.url(name)
+    #     form = ClothesForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #     return redirect("/")
+    # else:
+    #     form = ClothesForm()
+    return render(request, "upload.html")

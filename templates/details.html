@@ -5,27 +5,27 @@
 {% block body %}
 <p>gftuyijnbvcgfdrtyu</p>
 {% for clot in cloth %}
-<div class="row">
-    <div class="col s12 m8">
-        <h3>Happy</h3>
-        <div class="card story">
-            <div class="card-content">
-                Birthday
+    <div class="row">
+        <div class="col s12 m8">
+            <h3>clot.title</h3>
+            <div class="card story">
+                <div class="card-content">
+                    clot.description
+                </div>
             </div>
         </div>
-    </div>
-    {% if clot.picture %}
-    <div class="col s12 m4">
-        <div class="card center-align">
-            <div class="card-content">
-                {% comment %} <span class="card-title">{{story.user.displayName}}</span> {% endcomment %}
-                {% comment %} <img src="{{clot.picture}}" class="circle responsive-img img-small"> {% endcomment %}
-                <p>To You</p>
+        {% if clot.picture %}
+        <div class="col s12 m4">
+            <div class="card center-align">
+                <div class="card-content">
+                    {% comment %} <span class="card-title">{{story.user.displayName}}</span> {% endcomment %}
+                    {% comment %} <img src="{{clot.picture}}" class="circle responsive-img img-small"> {% endcomment %}
+                    <p> clot.picture</p>
+                </div>
             </div>
         </div>
+        {% endif %}
     </div>
-    {% endif %}
-</div>
 {% endfor %}
 {% comment %} {% for clot in cloth %}
     {% if clot.picture %}

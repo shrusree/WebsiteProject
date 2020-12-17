@@ -92,9 +92,7 @@
     <div class="row">
     {% for clot in cloth %}
       <div class="col-lg-4">
-        {% if clot.picture %}
-          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ clot.picture.url }}" alt="{{book.title}}"></img>
-        {% endif %}
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{ clot.picture.url }}"></img>
         <h2> {{ clot.title }}</h2>
         <p>{{ clot.description }}</p>
         <p><a class="btn btn-secondary" href="/details" role="button">View details »</a></p>

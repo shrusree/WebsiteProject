@@ -13,6 +13,8 @@ urlpatterns = [
     path("user", views.user, name="user"),
     path("upload", views.upload, name="upload"),
     path("details", views.details, name="details"),
+    path("lists", views.lists, name="lists"),
+    path("lists/<int:pk>/", views.delete_cloth, name="delete_cloth"),
 ]
 
 if settings.DEBUG:

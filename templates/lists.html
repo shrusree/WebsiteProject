@@ -1,0 +1,33 @@
+{% extends 'base.html'%} 
+
+{% block title %}Your Attires{% endblock title %}
+
+{% block body %}
+    <h2>Your Attires</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for clot in cloth %}
+                    <tr>
+                        <td>{{ clot.title }}</td>
+                        <td>{{ clot.description }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'delete_cloth' clot.pk %}" >
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                            {% comment %} <a href="{% url 'delete_cloth' clot.pk %}" class="btn btn-danger">Delete</a> {% endcomment %}
+                        </td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock body %}
