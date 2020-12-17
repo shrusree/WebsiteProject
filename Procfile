@@ -1,1 +1,1 @@
-web: gunicorn Rental.wsgi
+web: daphne Rental.wsgi:application --port $PORT --bind 0.0.0.0 -v2 
