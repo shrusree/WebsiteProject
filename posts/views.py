@@ -48,17 +48,22 @@ def delete_cloth(request, pk):
 
 
 def upload(request):
-    context = {}
     form = ClothesForm()
     if request.method == "POST":
-        uploaded_file = request.FILES["document"]
-        fs = FileSystemStorage()
-        name = fs.save(uploaded_file.name, uploaded_file)
-        context["url"] = fs.url(name)
-        form = ClothesForm(request.POST)
+        form = ClothesForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return redirect("/")
     else:
         form = ClothesForm()
-    return render(request, "upload.html")
+    return render(request, "upload.html", {"form": form})
+
+
+def upl(request):
+    context = {}
+    if request.method == "POST":
+        uploaded_file = request.FILES["document"]
+        fs = FileSystemStorage()
+        name = fs.save(uploaded_file.name, uploaded_file)
+        context["url"] = fs.url(name)
+    return render(request, "upload.html", context)

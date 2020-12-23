@@ -14,6 +14,7 @@ urlpatterns = [
     path("upload", views.upload, name="upload"),
     path("details", views.details, name="details"),
     path("lists", views.lists, name="lists"),
+    path("upl", views.upl, name="upl"),
     path("lists/<int:pk>/", views.delete_cloth, name="delete_cloth"),
 ]
 

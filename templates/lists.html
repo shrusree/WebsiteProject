@@ -19,10 +19,10 @@
                         <td>{{ clot.title }}</td>
                         <td>{{ clot.description }}</td>
                         <td>
-                            <form method="POST" action="{% url 'delete_cloth' clot.pk %}" >
+                            {% comment %} <form method="POST" action="{% url 'delete_cloth' clot.pk %}" >
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+                            </form> {% endcomment %}
                             {% comment %} <a href="{% url 'delete_cloth' clot.pk %}" class="btn btn-danger">Delete</a> {% endcomment %}
                         </td>
                     </tr>
