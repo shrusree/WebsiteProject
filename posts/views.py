@@ -22,8 +22,8 @@ def services(request):
 
 
 def contacts(request):
-    # return render(request, "index.html")
-    return HttpResponse("This is Contacts Page!")
+    return render(request, "contactus.html")
+    # return HttpResponse("This is Contacts Page!")
 
 
 def user(request):

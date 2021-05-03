@@ -23,7 +23,7 @@
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form> {% endcomment %}
-                            {% comment %} <a href="{% url 'delete_cloth' clot.pk %}" class="btn btn-danger">Delete</a> {% endcomment %}
+                            <a href="{% url 'delete_cloth' clot.pk %}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
             {% endfor %}
