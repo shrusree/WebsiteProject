@@ -8,7 +8,8 @@ from .models import Clothes
 def index(request):
     # return HttpResponse("This is Home-Page!")
     cloth = Clothes.objects.all()
-    return render(request, "index.html")
+    return render(request, "index.html", {"cloth": cloth})
+
 
 
 def aboutus(request):
